@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Vasos - Yuri Plaz</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background-color: #ff0000;
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        /* ── BARRA DE SECCIONES ── */
+        .secciones {
+            display: flex;
+            position: sticky;
+            top: 68px;
+            z-index: 99;
+            background-color: #222;
+        }
+
+        .secciones a {
+            flex: 1;
+            text-align: center;
+            padding: 12px 0;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid transparent;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .secciones a:hover,
+        .secciones a:active {
+            background-color: #ff0000;
+            border-bottom-color: #000;
+        }
+
+        /* ── TÍTULO DE SECCIÓN ── */
+        .seccion-titulo {
+            scroll-margin-top: 120px; /* espacio para header + barra de secciones */
+            background-color: #333;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            padding: 14px 16px;
+            letter-spacing: 2px;
+            border-left: 6px solid #ff0000;
+        }
+
+        /* ── LISTA DE PRODUCTOS ── */
+        .lista {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+        }
+
+        /* ── TARJETA ── */
+        .tarjeta {
+            display: flex;
+            background-color: #c8c8c8;
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 110px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .tarjeta img {
+            width: 120px;
+            min-height: 110px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .info {
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .titulo {
+            font-weight: 900;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+        }
+
+        .precio {
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .precio span.moneda { font-size: 0.85rem; font-weight: 900; }
+        .precio span.valor  { font-size: 1.1rem; }
+
+        /* ── VERSIÓN PC ── */
+        @media (min-width: 600px) {
+            body { max-width: 100%; }
+
+            .secciones { top: 76px; }
+
+            .lista {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                padding: 20px;
+            }
+
+            .tarjeta {
+                flex-direction: column;
+                min-height: unset;
+            }
+
+            .tarjeta img {
+                width: 100%;
+                height: 180px;
+                min-height: unset;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .lista {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 30px;
+                gap: 20px;
+            }
+            .tarjeta img { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span>VASOS</span>
+        <a href="https://jumpe136.github.io/YURIPLAZ/">VOLVER</a>
+    </header>
+
+    <!-- Barra de navegación entre secciones -->
+    <nav class="secciones">
+        <a href="#sec-vasos">🥤 Vasos</a>
+        <a href="#sec-tapas">🔘 Tapas</a>
+    </nav>
+
+    <!-- ══ SECCIÓN VASOS ══ -->
+    <div id="sec-vasos" class="seccion-titulo">Vasos</div>
+    <main class="lista">
+
+        <div class="tarjeta">
+            <img src="vaso3.5.jpg" alt="Vaso 3.5oz">
+            <div class="info">
+                <div class="titulo">Vaso 3.5 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso5.jpg" alt="Vaso 5 oz">
+            <div class="info">
+                <div class="titulo">Vaso 5 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso7.jpg" alt="Vaso 7 oz">
+            <div class="info">
+                <div class="titulo">Vaso 7 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso9.jpg" alt="Vaso 9 oz">
+            <div class="info">
+                <div class="titulo">Vaso 9 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso10.jpg" alt="Vaso 10 oz">
+            <div class="info">
+                <div class="titulo">Vaso 10 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso12.jpg" alt="Vaso 12 oz">
+            <div class="info">
+                <div class="titulo">Vaso 12 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso13.jpg" alt="Vaso 13 oz">
+            <div class="info">
+                <div class="titulo">Vaso 13 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso14.jpg" alt="Vaso 14 oz">
+            <div class="info">
+                <div class="titulo">Vaso 14 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso16.jpg" alt="Vaso 16 oz">
+            <div class="info">
+                <div class="titulo">Vaso 16 oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso5negro.jpg" alt="Vaso 5 oz Negro">
+            <div class="info">
+                <div class="titulo">Vaso 5 oz Negro</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso5 vacan.webp" alt="Vaso 5 oz Vacan">
+            <div class="info">
+                <div class="titulo">Vaso 5 oz Vacan</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso7 vacan.webp" alt="Vaso 7 oz Vacan">
+            <div class="info">
+                <div class="titulo">Vaso 7 oz Vacan</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso9 vacan.webp" alt="Vaso 9 oz Vacan">
+            <div class="info">
+                <div class="titulo">Vaso 9 oz Vacan</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="vaso10 vacan.jpg" alt="Vaso 10 oz Vacan">
+            <div class="info">
+                <div class="titulo">Vaso 10 oz Vacan</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="copa 1 acmeleon.jpg" alt="Copa 1 oz Acmeleon ">
+            <div class="info">
+                <div class="titulo">Copa 1 oz Acmeleon </div>
+                <div class="precio">
+                    Precio <span class="moneda">$</span><span class="valor">PRECIO</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ══ SECCIÓN TAPAS ══ -->
+    <div id="sec-tapas" class="seccion-titulo">Tapas</div>
+    <main class="lista">
+
+        <div class="tarjeta">
+            <img src="tapa vaso 3.5-6-7.jpg" alt="Tapa 3.5-6-7oz">
+            <div class="info">
+                <div class="titulo">Tapa 3.5-6-7oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="tapa vaso 9-10-12.jpg" alt="Tapa 9-10-12oz">
+            <div class="info">
+                <div class="titulo">Tapa 9-10-12oz</div>
+                <div class="precio">Precio <span class="moneda">$</span><span class="valor">PRECIO</span></div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="tapa vaso 13-14-16.jpg" alt="Tapa 13-14-16oz">
+            <div class="info">
+                <div class="titulo">Tapa 13-14-16oz</div>
+                <div class="precio">
+                    Precio <span class="moneda">$</span><span class="valor">PRECIO</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="tapa vaso 1 acmeleon.jpg" alt="Tapa 1oz Acmeleon">
+            <div class="info">
+                <div class="titulo">Tapa 1oz Acmeleon</div>
+                <div class="precio">
+                    Precio <span class="moneda">$</span><span class="valor">PRECIO</span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+        <!-- 
+            PARA AGREGAR MÁS PRODUCTOS copia este bloque:
+
+        <div class="tarjeta">
+            <img src="img/FOTO.jpg" alt="NOMBRE">
+            <div class="info">
+                <div class="titulo">NOMBRE DEL PRODUCTO</div>
+                <div class="precio">
+                    Precio <span class="moneda">$</span><span class="valor">PRECIO</span>
+                </div>
+            </div>
+        </div>
+        -->
+
+
+
+
+</body>
+</html>
